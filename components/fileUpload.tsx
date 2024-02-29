@@ -16,7 +16,7 @@ const FileUpload = async () => {
     const router = useRouter()
     const {userId} = auth()
     const [uploading, setUploading] = React.useState(false);
-    const { mutate, isLoading } = useMutation({
+    const { mutate } = useMutation({
         mutationFn: async ({
             file_key,
             file_name,
@@ -83,7 +83,7 @@ const FileUpload = async () => {
         <div className='p-2 bg-white rounded-xl border'>
             <div {...getRootProps({className:'border-dashed border-2 rounded-xl cursor-pointer bg-gray-50 py-8 flex justify-center items-center flex-col',})}>
                 <input {...getInputProps()} />
-                { uploading || isLoading 
+                { uploading
                 ? (
                     <>
                     <Loader2 className='h-10 w-10 text-blue-500 animate-spin' />
