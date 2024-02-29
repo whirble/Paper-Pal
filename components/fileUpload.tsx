@@ -12,7 +12,7 @@ import { chats } from '@/lib/db/schema'
 import { eq } from 'drizzle-orm'
 import { auth } from '@clerk/nextjs'
 
-const FileUpload = () => {
+const FileUpload = async () => {
     const router = useRouter()
     const {userId} = auth()
     const [uploading, setUploading] = React.useState(false);
@@ -47,12 +47,12 @@ const FileUpload = () => {
             // file size < 10 mb
             try {
                 // Limit chats creation in test mode
-                const _chats = await db.select().from(chats).where(eq(chats.userId, userId || ''))
-                if(_chats.length > 3) {
-                    toast.error("This app is on test mode!, You've reached the chats limit ")
-                    return
-                }
-                // ------------------------
+                // const _chats = await db.select().from(chats).where(eq(chats.userId, userId || ''))
+                // if(_chats.length > 3) {
+                //     toast.error("This app is on test mode!, You've reached the chats limit ")
+                //     return
+                // }
+                // // ------------------------
                 setUploading(true)
                 const data = await uploadToS3(file)
                 if(!data?.file_key || !data.file_name){

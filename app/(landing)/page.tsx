@@ -67,7 +67,10 @@ export default async function Home() {
 
           <div className={`flex items-center ${!isAuth ? 'w-1/2 text-white': 'w-full'}`}>
             <h1 className='text-6xl font-semibold py-5'>
-              Instant PDF Insights: <TypeEffect cursor={true} delay={500} string={['AI Chat Bot for Swift Document Analysis']}/>
+              {isAuth 
+              ? <>Instant PDF Insights: <TypeEffect cursor={true} delay={500} string={['AI Chat Bot for Swift Document Analysis']}/></> 
+              : <>Get Instant PDF Insights</>
+              }
             </h1>
           </div>
 
@@ -97,7 +100,7 @@ export default async function Home() {
           <div className='flex my-16 w-full h-3/5'>
 
             <div className='w-[50%] text-white font-semibold leading-tight text-base'>
-              <p className='w-[50%]'>Don't just read, revolutionize your document interactions with the revolutionary GPT-3.5 language model. Instead of sifting through pages, simply ask: "Summarize this report" or "Extract key information." Need inspiration? Generate creative content based on your documents, brainstorm ideas, or even collaborate on tasks directly within the PDF. Unleash the full potential of your PDFs with GPT-3.5 - your intelligent document assistant is here.</p>
+              <p className='w-[50%]'>Don&apos;t just read, revolutionize your document interactions with the revolutionary GPT-3.5 language model. Instead of sifting through pages, simply ask: "Summarize this report" or "Extract key information." Need inspiration? Generate creative content based on your documents, brainstorm ideas, or even collaborate on tasks directly within the PDF. Unleash the full potential of your PDFs with GPT-3.5 - your intelligent document assistant is here.</p>
             </div>
   
             <div className='w-[40%] flex flex-col items-start justify-start font-semibold'>
@@ -109,10 +112,6 @@ export default async function Home() {
               <p className=''>Output</p>
               <p className=''>
                 <span className='bg-gray-500 mb-1 inline-block whitespace-nowrap'> <TypeEffect cursor={false} delay={5000} string={['Absolument ! Je suis votre assistant IA avancé, prêt à analyser,']} /></span>
-                <span className='bg-gray-500 mb-1 inline-block whitespace-nowrap'> <TypeEffect cursor={false} delay={7000} string={['résumer et répondre à vos questions concernant les documents PDF']} /></span>
-                <span className='bg-gray-500 mb-1 inline-block whitespace-nowrap'> <TypeEffect cursor={false} delay={10000} string={['que vous téléchargez. Je suis là pour vous offrir une assistance']} /></span>
-                <span className='bg-gray-500 mb-1 inline-block whitespace-nowrap'> <TypeEffect cursor={false} delay={13000} string={["complète et efficace. N'hésitez pas à explorer mes fonctionnalités"]} /></span>
-                <span className='bg-gray-500 mb-1 inline-block whitespace-nowrap'> <TypeEffect cursor={false} delay={16000} string={[' pour découvrir comment je peux vous aider au mieux !']} /></span>
               </p>
               </div>
             </div>

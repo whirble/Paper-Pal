@@ -44,7 +44,7 @@ const ChatContainer = ({chatId}: Props) => {
         <div className='relative max-h-screen overflow-y-auto scrollbar-thin-rounded' id='messages-container'>
 
             <div className='sticky top-0 inset-x-0 p-2 bg-white h-fit'>
-                <h3 className='text-md font-bold'>Your Chat</h3>
+                <h3 className='text-md font-bold'>Votre Chat</h3>
             </div>
 
             {/* messages list */}
