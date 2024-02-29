@@ -1,4 +1,3 @@
-'use client'
 import React from 'react'
 import { DrizzleChat } from '@/lib/db/schema'
 import Link from 'next/link'
@@ -7,7 +6,6 @@ import {ArrowRight, Bot, FilePlus2, GitBranchPlus, HelpCircle, Home, MessageCirc
 import {MessageCircle} from 'lucide-react'
 import { cn } from '@/lib/utils'
 import axios from 'axios'
-import SubscriptionBtn from './SubscriptionBtn'
 import { checkSubscription } from '@/lib/subscription'
 import { UserButton } from '@clerk/nextjs'
 
@@ -54,7 +52,7 @@ const ChatSideBar = async ({chats, chatId, isPro}: Props) => {
                 <div className='flex items-start justify-end gap-2 flex-col w-full '>
 
                     {/* Subscription button */}
-                    <SubscriptionBtn isPro={isPro}/>
+                    {/* <SubscriptionBtn isPro={isPro}/> */}
                     {/* user button */}
                     <UserButton afterSignOutUrl='/'/>
 
