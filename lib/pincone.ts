@@ -1,6 +1,6 @@
 // import { PineconeClient }  from '@pinecone-database/pinecone';
 import { Pinecone, utils as PineconeUtils } from '@pinecone-database/pinecone';
-import { Vector } from '@pinecone-database/pinecone';
+import { PineconeRecord, RecordMetadataValue } from '@pinecone-database/pinecone';
 
 import { downloadFromS3 } from './s3-server';
 import { PDFLoader } from 'langchain/document_loaders/fs/pdf'
@@ -56,25 +56,26 @@ export async function loadS3IntoPinecone(fileKey: string) {
 
     console.log('uploading vectors into pinecone')
     const namespace = convertToAscii(fileKey)
-    console.log(namespace)
+    
     await pineconeIndex.namespace(namespace).upsert(vectors)
     return documents[0]
 
 }
 
-async function embedDocuments(doc:Document) {
+async function embedDocuments(doc:Document): Promise<PineconeRecord> {
     try {
         const embeddings = await getEmbeddings(doc.pageContent)
         const hash = md5(doc.pageContent)
-
+        // Define types inline with type assertion
+        const metadata = {
+            text: doc.metadata.text as RecordMetadataValue,
+            pageNumber: doc.metadata.pageNumber as number
+        };
         return {
             id: hash,
             values: embeddings,
-            metadata: {
-                text: doc.metadata.text,
-                pageNumber: doc.metadata.pageNumber
-            }
-        } as Vector
+            metadata: metadata
+        };
 
     } catch (error) {
         console.log('error embedding documents', error)
