@@ -100,7 +100,7 @@ export default async function Home() {
           <div className='flex my-16 w-full h-3/5'>
 
             <div className='w-[50%] text-white font-semibold leading-tight text-base'>
-              <p className='w-[50%]'>Don&apos;t just read, revolutionize your document interactions with the revolutionary GPT-3.5 language model. Instead of sifting through pages, simply ask: "Summarize this report" or "Extract key information." Need inspiration? Generate creative content based on your documents, brainstorm ideas, or even collaborate on tasks directly within the PDF. Unleash the full potential of your PDFs with GPT-3.5 - your intelligent document assistant is here.</p>
+              <p className='w-[50%]'>Don&apos;t just read, revolutionize your document interactions with the revolutionary GPT-3.5 language model. Instead of sifting through pages, simply ask: &quot;Summarize this report&quot; or &quot;Extract key information.&quot; Need inspiration? Generate creative content based on your documents, brainstorm ideas, or even collaborate on tasks directly within the PDF. Unleash the full potential of your PDFs with GPT-3.5 - your intelligent document assistant is here.</p>
             </div>
   
             <div className='w-[40%] flex flex-col items-start justify-start font-semibold'>
