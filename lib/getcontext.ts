@@ -6,6 +6,7 @@ export async function GetMachesFromEmbeddings(embeddings:number[], fileKey: stri
     
     const pinecone = new Pinecone({
         apiKey: process.env.PINCONE_API_KEY || '',
+        environment: 'gcp-starter'
     });
     if(!pinecone) {
         console.log('failed to initialize Pinecone Client')
