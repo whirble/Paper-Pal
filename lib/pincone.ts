@@ -15,6 +15,7 @@ export const getPineconeClient = async () => {
     if(!pinecone) {
         pinecone = new Pinecone({
             apiKey: process.env.PINCONE_API_KEY || '',
+            environment: 'gcp-starter'
         });
         if(!pinecone) {
             console.log('failed to initialize PineconeClient')
