@@ -1,7 +1,7 @@
 import React from 'react'
 import {Message} from 'ai/react'
 import { cn } from '@/lib/utils'
-import { AudioLines, Loader2, LoaderIcon, User } from 'lucide-react'
+import { AudioLines, CircleEllipsis, Loader2, LoaderIcon, User } from 'lucide-react'
 
 
 function formatStringToHTML(inputString: string) {
@@ -46,8 +46,8 @@ const MessagesList = ({messages, isLoading}: Props) => {
                         <div className={cn('flex flex-col rounded-sm text-base py-2 text-dark gap-2 font-costum', {})}>
                             <div className='flex items-center justify-start gap-2'>
                                 {message.role == 'user' 
-                                ? (<><div className='border-none rounded-full text-center bg-gradient-to-r from-gray-500 to-gray-200 p-2'><User className='w-5 h-5 text-white ' /></div><p className='text-base font-semibold'>Vous</p></>) 
-                                : (<><div className='border-none rounded-full text-center bg-gradient-to-r from-gray-500 to-gray-200 p-2'><AudioLines className='w-5 h-4 text-white' /></div><p className='text-base font-semibold'>PaperPal</p></>) 
+                                ? (<><div className='border border-slate-900 rounded-full text-center bg-gradient-to-r from-white to-white p-1'><User className='w-5 h-5' /></div><p className='text-base font-semibold'>Vous</p></>) 
+                                : (<><div className='border border-slate-900 rounded-full text-center bg-gradient-to-r from-white to-white p-1'><CircleEllipsis className='w-5 h-4 /></div><p className='text-base font-semibold'>PaperPal</p></>) 
                                 }
                             </div>
                             <div className='flex flex-col gap-2 leading-relaxed' dangerouslySetInnerHTML={{ __html: formatStringToHTML(message.content) }} ></div>
