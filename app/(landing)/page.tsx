@@ -54,7 +54,7 @@ export default async function Home() {
           <UserButton afterSignOutUrl='/'/>
           </>) 
           : (<>
-          <Link href={'/sign-up'} className='flex items-center hover:bg-slate-500 text-white font-light p-1 bg-transp◘arent border border-slate-200 rounded-md'>Sign up</Link>
+          <Link href={'/sign-up'} className='flex items-center hover:bg-slate-900 text-white font-light p-2 bg-transparent border border-slate-300 rounded-md text-base'>Sign up</Link>
           <Link href={'/sign-in'} className='flex items-center hover:underline text-white font-semibold'>Login <ArrowUpRight className='h-5 w-5'/></Link>
           </>)}
         </div>
@@ -74,7 +74,7 @@ export default async function Home() {
             <h1 className='text-6xl font-light py-5'>
               {isAuth 
               ? <>Get Instant PDF Insights</>
-              : <>Instant PDF Insights: <TypeEffect cursor={true} delay={500} string={['AI Chat Bot for Swift Document Analysis']}/></> 
+              : <>Instant PDF Insights: <TypeEffect cursor={true} delay={500} string={['AI Chat Bot for Swift Document Analysis.']}/></> 
               }
             </h1>
           </div>
