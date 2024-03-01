@@ -75,6 +75,14 @@ module.exports = {
         'img-pattern': "url('https://picsum.photos/1900/1000')",
        },
     },
+    fontFamily: {
+      'sans': ['ui-sans-serif', 'system-ui'],
+      'serif': ['ui-serif', 'Georgia'],
+      'mono': ['ui-monospace', 'SFMono-Regular'],
+      'display': ['Oswald'],
+      'body': ['"Open Sans"'],
+      'costum': ["Raleway", 'sans-serif'],
+     }
   },
   plugins: [require("tailwindcss-animate")],
 }
