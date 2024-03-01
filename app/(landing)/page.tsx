@@ -99,7 +99,7 @@ export default async function Home() {
           {isAuth 
           ? ('') 
           : (<>
-          <div className='absolute -top-4 right-0 flex my-16 w-[90%] flex flex-col gap-3'>
+          <div className='absolute -top-4 right-0 flex my-16 w-[40%] flex flex-col gap-3'>
 
             <div className='flex flex-col items-start justify-start text-white font-light leading-tight text-base'>
               <Quote className='w-4 h-4 text-white'/>
