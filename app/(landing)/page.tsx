@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { UserButton, auth } from '@clerk/nextjs'
 import { Button } from '@/components/ui/button'
 import Image from 'next/image'
-import { ArrowUpRight, LogIn, User, AudioLines } from 'lucide-react';
+import { ArrowUpRight, LogIn, User, AudioLines, TextQuote } from 'lucide-react';
 import FileUpload from '@/components/fileUpload';
 import { checkSubscription } from '@/lib/subscription';
 import { db } from '@/lib/db';
@@ -67,8 +67,8 @@ export default async function Home() {
           ' items-start pl-10 justify-start' : !isAuth
         })}>
 
-          <div className={`flex items-center ${!isAuth ? 'w-1/2 text-white': 'w-full justify-center'}`}>
-            <h1 className='text-6xl font-semibold py-5'>
+          <div className={`flex items-center ${!isAuth ? 'w-1/2 text-slate-300': 'w-full justify-center'}`}>
+            <h1 className='text-6xl font-light py-5'>
               {isAuth 
               ? <>Get Instant PDF Insights</>
               : <>Instant PDF Insights: <TypeEffect cursor={true} delay={500} string={['AI Chat Bot for Swift Document Analysis']}/></> 
@@ -84,7 +84,7 @@ export default async function Home() {
             }
           </div>
 
-          <p className='max-w-xl my-2 text-lg text-gray-400'>
+          <p className='max-w-xl my-1 font-light text-gray-400 text-base'>
             Join millions of students, researchers and professionals to instantly answer questions and inderstand research with AI.
           </p>
           
@@ -99,22 +99,21 @@ export default async function Home() {
           {isAuth 
           ? ('') 
           : (<>
-          <div className='absolute top-0 right-0 flex my-16 w-[40%]'>
+          <div className='absolute top-0 right-0 flex my-16 w-[40%] flex flex-col gap-3'>
 
-            <div className='w-[50%] text-white font-semibold leading-tight text-base'>
+            <div className='flex flex-col items-start justify-start w-[50%] text-white font-light leading-tight text-base'>
+              <TextQuote className='w-4 h-4 text-white'/>
               <p className='w-[50%]'>Don&apos;t just read, revolutionize your document interactions with the revolutionary GPT-3.5 language model. Instead of sifting through pages, simply ask: &quot;Summarize this report&quot; or &quot;Extract key information.&quot; Need inspiration? Generate creative content based on your documents, brainstorm ideas, or even collaborate on tasks directly within the PDF. Unleash the full potential of your PDFs with GPT-3.5 - your intelligent document assistant is here.</p>
             </div>
   
-            <div className='w-[40%] flex flex-col items-start justify-start font-semibold'>
+            <div className='w-[40%] flex flex-col items-start justify-start font-light'>
               <div className='flex flex-col p-4 gap-4 w-full h-fit border border-gray-800 border-b-0 text-base text-gray-400 leading-tight'>
               <p className=''>Input</p>
               <p className=''>Présentez-vous et vos capacités. Parlez un peu de vos fonctions, de vos caractéristiques et des tâches que vous êtes conçu pour gérer.</p>
               </div>
               <div className='flex flex-col p-4 gap-3 w-full h-fit border border-gray-800 text-base text-white leading-tight'>
               <p className=''>Output</p>
-              <p className=''>
-                <span className='bg-gray-500 mb-1 inline-block whitespace-nowrap'> <TypeEffect cursor={false} delay={5000} string={['Absolument ! Je suis votre assistant IA avancé, prêt à analyser,']} /></span>
-              </p>
+              <p className=''><TypeEffect cursor={false} delay={5000} string={['Absolument ! Je suis votre assistant IA avancé, prêt à analyser,']} /></p>
               </div>
             </div>
           
