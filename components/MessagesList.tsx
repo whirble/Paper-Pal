@@ -43,7 +43,7 @@ const MessagesList = ({messages, isLoading}: Props) => {
                 return (
                     <div key={message.id} className={cn('flex', {})}>
                         
-                        <div className={cn('rounded-sm text-base py-2 text-dark gap-2', {})}>
+                        <div className={cn('flex flex-col rounded-sm text-base py-2 text-dark gap-2 font-mono', {})}>
                             <div className='flex items-center justify-start gap-2'>
                                 {message.role == 'user' 
                                 ? (<><User className='w-4 h-4' /><p className='text-base font-semibold'>Vous</p></>) 
