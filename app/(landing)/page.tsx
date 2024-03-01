@@ -112,9 +112,9 @@ export default async function Home() {
             <div className='flex flex-col items-start justify-start font-light'>
               <div className='flex flex-col p-4 gap-4 w-full h-fit border border-gray-800 border-b-0 text-base text-gray-400 leading-tight'>
               <p className=''>Input</p>
-              <p className=''>Présentez-vous et vos capacités. Parlez un peu de vos fonctions, de vos caractéristiques et des tâches que vous êtes conçu pour gérer.</p>
+              <p className=''>Présentez-vous et parler de vos fonctions, caractéristiques et les tâches pour lesquelles vous êtes conçu.</p>
               </div>
-              <div className='flex flex-col p-4 gap-3 w-full h-fit border border-gray-800 text-base text-white leading-tight'>
+              <div className='flex flex-col p-4 gap-3 w-full h-auto border border-gray-800 text-base text-white leading-tight'>
               <p className=''>Output</p>
               <p className=''><TypeEffect cursor={false} delay={5000} string={['Je suis le modèle linguistique GPT-3.5, révolutionnant l`engagement avec les documents. Je suis conçu pour résumer les rapports, extraire des informations clés et générer du contenu créatif. Je suis votre assistant documentaire intelligent, simplifiant la gestion de l`information.']} /></p>
               </div>
