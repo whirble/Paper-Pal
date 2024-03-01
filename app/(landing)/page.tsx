@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { UserButton, auth } from '@clerk/nextjs'
 import { Button } from '@/components/ui/button'
 import Image from 'next/image'
-import { ArrowUpRight, LogIn, User, AudioLines, TextQuote } from 'lucide-react';
+import { ArrowUpRight, LogIn, User, AudioLines, TextQuote, Quote } from 'lucide-react';
 import FileUpload from '@/components/fileUpload';
 import { checkSubscription } from '@/lib/subscription';
 import { db } from '@/lib/db';
@@ -99,14 +99,14 @@ export default async function Home() {
           {isAuth 
           ? ('') 
           : (<>
-          <div className='absolute -top-4 right-0 flex my-16 w-[40%] flex flex-col gap-3'>
+          <div className='absolute -top-4 right-0 flex my-16 w-[90%] flex flex-col gap-3'>
 
             <div className='flex flex-col items-start justify-start text-white font-light leading-tight text-base'>
-              <TextQuote className='w-4 h-4 text-white'/>
-              <p className='w-[50%]'>Don&apos;t just read, revolutionize your document interactions with the revolutionary GPT-3.5 language model. Instead of sifting through pages, simply ask: &quot;Summarize this report&quot; or &quot;Extract key information.&quot; Need inspiration? Generate creative content based on your documents, brainstorm ideas, or even collaborate on tasks directly within the PDF. Unleash the full potential of your PDFs with GPT-3.5 - your intelligent document assistant is here.</p>
+              <Quote className='w-4 h-4 text-white'/>
+              <p className=''>Don&apos;t just read, revolutionize your document interactions with the revolutionary GPT-3.5 language model. Instead of sifting through pages, simply ask: &quot;Summarize this report&quot; or &quot;Extract key information.&quot; Need inspiration? Generate creative content based on your documents, brainstorm ideas, or even collaborate on tasks directly within the PDF. Unleash the full potential of your PDFs with GPT-3.5 - your intelligent document assistant is here.</p>
             </div>
   
-            <div className='w-[40%] flex flex-col items-start justify-start font-light'>
+            <div className='flex flex-col items-start justify-start font-light'>
               <div className='flex flex-col p-4 gap-4 w-full h-fit border border-gray-800 border-b-0 text-base text-gray-400 leading-tight'>
               <p className=''>Input</p>
               <p className=''>Présentez-vous et vos capacités. Parlez un peu de vos fonctions, de vos caractéristiques et des tâches que vous êtes conçu pour gérer.</p>
