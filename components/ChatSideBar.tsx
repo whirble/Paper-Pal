@@ -27,7 +27,7 @@ const ChatSideBar = ({chats, chatId, isPro}: Props) => {
             <Link href={'/'} className='p-2 rounded-lg text-sm text-white w-full border border-gray-700 flex items-center justify-between hover:bg-gray-900 group'>
                 <div className='flex items-center'>
                     <GitBranchPlus className='mr-2 w-4 h-4' />
-                    New Chat
+                    Nouveau conversation
                 </div>
                 <ArrowRight className='mr-5 w-4 h-4  invisible transform transition duration-200 group-hover:visible group-hover:translate-x-5 ' />
             </Link>
