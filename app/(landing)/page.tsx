@@ -116,7 +116,7 @@ export default async function Home() {
               </div>
               <div className='flex flex-col p-4 gap-3 w-full h-auto border border-gray-800 text-base text-white leading-tight'>
               <p className=''>Output</p>
-              <p className=''><TypeEffect delay={500} cursor={false} string={['Je suis le modèle linguistique GPT-3.5, révolutionnant l`engagement avec les documents. Je suis conçu pour résumer les rapports, extraire des informations clés et générer du contenu créatif. Je suis votre assistant documentaire intelligent, simplifiant la gestion de l`information.']} /></p>
+              <p className=''><TypeEffect delay={1000} cursor={false} string={['Je suis le modèle linguistique GPT-3.5, révolutionnant l`engagement avec les documents. Je suis conçu pour résumer les rapports, extraire des informations clés et générer du contenu créatif. Je suis votre assistant documentaire intelligent, simplifiant la gestion de l`information.']} /></p>
               </div>
             </div>
           
