@@ -12,9 +12,9 @@ import { chats } from '@/lib/db/schema'
 import { eq } from 'drizzle-orm'
 import { auth } from '@clerk/nextjs'
 
-const FileUpload =  () => {
+const FileUpload = () => {
     const router = useRouter()
-    const {userId} = auth()
+    // const {userId} = auth() only in server component.
     const [uploading, setUploading] = React.useState(false);
     const { mutate } = useMutation({
         mutationFn: async ({
@@ -62,7 +62,7 @@ const FileUpload =  () => {
                 
                 mutate(data, {
                     onSuccess: (chat_id) => {
-                        toast.success(`chat created, you're being redirected.`);
+                        toast.success(`chat created :), you're being redirected.`);
                         router.push(`/chat/${chat_id}`)
                     },
                     onError: (err) => {

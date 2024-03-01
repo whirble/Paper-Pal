@@ -49,10 +49,12 @@ export default async function Home() {
       <div className='absolute top-0 left-0 w-full h-auto border-b border-solid border-transparent p-4 flex items-center justify-end gap-5'>
         <div className='flex items-center'>
           {isAuth 
-          ? (<SubscriptionBtn isPro={isPro} />) 
+          ? (<>
+          <SubscriptionBtn isPro={isPro} />
+          <UserButton afterSignOutUrl='/'/>
+          </>) 
           : (<Link href={'/sign-in'} className='flex items-center hover:underline text-white font-semibold'>Login <ArrowUpRight className='h-5 w-5'/></Link>)}
         </div>
-        <UserButton afterSignOutUrl='/'/>
       </div>  
 
       <div className={cn('absolute ', {
@@ -60,16 +62,16 @@ export default async function Home() {
         'left-0 top-1/4 w-full': !isAuth
       })}>
 
-        <div className={cn('flex flex-col justify-start',{
+        <div className={cn('flex flex-col ',{
           ' items-center text-center' : isAuth,
-          ' items-start pl-10' : !isAuth
+          ' items-start pl-10 justify-start' : !isAuth
         })}>
 
-          <div className={`flex items-center ${!isAuth ? 'w-1/2 text-white': 'w-full'}`}>
+          <div className={`flex items-center ${!isAuth ? 'w-1/2 text-white': 'w-full justify-center'}`}>
             <h1 className='text-6xl font-semibold py-5'>
               {isAuth 
-              ? <>Instant PDF Insights: <TypeEffect cursor={true} delay={500} string={['AI Chat Bot for Swift Document Analysis']}/></> 
-              : <>Get Instant PDF Insights</>
+              ? <>Get Instant PDF Insights</>
+              : <>Instant PDF Insights: <TypeEffect cursor={true} delay={500} string={['AI Chat Bot for Swift Document Analysis']}/></> 
               }
             </h1>
           </div>

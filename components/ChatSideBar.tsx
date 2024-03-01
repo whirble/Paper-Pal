@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import { DrizzleChat } from '@/lib/db/schema'
 import Link from 'next/link'
@@ -17,7 +18,7 @@ type Props = {
 }
 
 
-const ChatSideBar = async ({chats, chatId, isPro}: Props) => {
+const ChatSideBar = ({chats, chatId, isPro}: Props) => {
 
     const [loading, setLoading] = React.useState(false);
 
