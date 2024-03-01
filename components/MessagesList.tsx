@@ -46,8 +46,8 @@ const MessagesList = ({messages, isLoading}: Props) => {
                         <div className={cn('flex flex-col rounded-sm text-base py-2 text-dark gap-2 font-costum', {})}>
                             <div className='flex items-center justify-start gap-2'>
                                 {message.role == 'user' 
-                                ? (<><div className='border border-slate-900 rounded-full text-center bg-gradient-to-r from-white to-white p-1'><User className='w-5 h-5' /></div><p className='text-base font-semibold'>Vous</p></>) 
-                                : (<><div className='border border-slate-900 rounded-full text-center bg-gradient-to-r from-white to-white p-1'><CircleEllipsis className='w-5 h-4 /></div><p className='text-base font-semibold'>PaperPal</p></>) 
+                                ? (<><div className='border border-slate-900 rounded-full text-center bg-gradient-to-r from-white to-white p-1 shadow'><User className='w-5 h-5' /></div><p className='text-base font-semibold'>Vous</p></>) 
+                                : (<><div className='border border-slate-900 rounded-full text-center bg-gradient-to-r from-white to-white p-1 shadow'><CircleEllipsis className='w-5 h-4'/></div><p className='text-base font-semibold'>PaperPal</p></>) 
                                 }
                             </div>
                             <div className='flex flex-col gap-2 leading-relaxed' dangerouslySetInnerHTML={{ __html: formatStringToHTML(message.content) }} ></div>
