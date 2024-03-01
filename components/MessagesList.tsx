@@ -43,14 +43,14 @@ const MessagesList = ({messages, isLoading}: Props) => {
                 return (
                     <div key={message.id} className={cn('flex', {})}>
                         
-                        <div className={cn('rounded-sm text-md py-2 text-dark gap-2', {})}>
+                        <div className={cn('rounded-sm text-base py-2 text-dark gap-2', {})}>
                             <div className='flex items-center justify-start gap-2'>
                                 {message.role == 'user' 
-                                ? (<><User className='w-4 h-4' /><p className='text-md font-semibold'>Vous</p></>) 
-                                : (<><AudioLines className='w-4 h-4' /><p className='text-sm font-bold'>PaperPal</p></>) 
+                                ? (<><User className='w-4 h-4' /><p className='text-base font-semibold'>Vous</p></>) 
+                                : (<><AudioLines className='w-4 h-4' /><p className='text-base font-semibold'>PaperPal</p></>) 
                                 }
                             </div>
-                            <div className='flex flex-col gap-2' dangerouslySetInnerHTML={{ __html: formatStringToHTML(message.content) }} ></div>
+                            <div className='flex flex-col gap-2 leading-relaxed' dangerouslySetInnerHTML={{ __html: formatStringToHTML(message.content) }} ></div>
                         </div>
                     </div>
                 )
