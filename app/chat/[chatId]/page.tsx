@@ -35,7 +35,7 @@ const ChatPage = async ({params: {chatId}}: Props) => {
             <div className='flex w-full max-h-screen '>
 
                 {/* Sidebar */}
-                <div className='flex-[1] w-md max-w-lg'>
+                <div className='flex-[1] w-lg max-w-xl'>
                     <ChatSideBar chats={userChats} chatId={parseInt(chatId)} isPro={isPro} />
                 </div>
 
