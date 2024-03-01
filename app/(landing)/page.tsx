@@ -99,10 +99,10 @@ export default async function Home() {
           {isAuth 
           ? ('') 
           : (<>
-          <div className='absolute -top-4 right-0 flex my-16 w-[40%] flex flex-col gap-3'>
+          <div className='absolute -top-4 xs:top-[100%] right-4 flex my-16 w-[40%] mx-3 flex flex-col gap-8'>
 
-            <div className='flex flex-col items-start justify-start text-white font-light leading-tight text-base'>
-              <Quote className='w-4 h-4 text-white'/>
+            <div className='flex flex-col items-start justify-start text-white font-light leading-tight text-base p-5 bg-gray-700'>
+              <Quote className='w-4 h-4 text-white py-4'/>
               <p className=''>Don&apos;t just read, revolutionize your document interactions with the revolutionary GPT-3.5 language model. Instead of sifting through pages, simply ask: &quot;Summarize this report&quot; or &quot;Extract key information.&quot; Need inspiration? Generate creative content based on your documents, brainstorm ideas, or even collaborate on tasks directly within the PDF. Unleash the full potential of your PDFs with GPT-3.5 - your intelligent document assistant is here.</p>
             </div>
   
