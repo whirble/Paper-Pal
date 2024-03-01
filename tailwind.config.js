@@ -72,7 +72,7 @@ module.exports = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
       backgroundImage: {
-        'img-pattern': "url('https://picsum.photos/800/900')",
+        'img-pattern': "url('https://picsum.photos/1900/1000')",
        },
     },
   },
