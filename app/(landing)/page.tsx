@@ -62,7 +62,7 @@ export default async function Home() {
         'left-0 top-1/4 w-full': !isAuth
       })}>
 
-        <div className={cn('flex flex-col ',{
+        <div className={cn('relative flex flex-col ',{
           ' items-center text-center' : isAuth,
           ' items-start pl-10 justify-start' : !isAuth
         })}>
@@ -99,7 +99,7 @@ export default async function Home() {
           {isAuth 
           ? ('') 
           : (<>
-          <div className='flex my-16 w-full h-3/5'>
+          <div className='absolute top-0 right-0 flex my-16 w-[40%]'>
 
             <div className='w-[50%] text-white font-semibold leading-tight text-base'>
               <p className='w-[50%]'>Don&apos;t just read, revolutionize your document interactions with the revolutionary GPT-3.5 language model. Instead of sifting through pages, simply ask: &quot;Summarize this report&quot; or &quot;Extract key information.&quot; Need inspiration? Generate creative content based on your documents, brainstorm ideas, or even collaborate on tasks directly within the PDF. Unleash the full potential of your PDFs with GPT-3.5 - your intelligent document assistant is here.</p>
