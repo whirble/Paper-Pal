@@ -37,10 +37,10 @@ export async function GET() {
                     price_data: {
                         currency: 'USD',
                         product_data: {
-                            name: 'ChatDocs Pro',
-                            description: 'Unlimited PDF sessions!'
+                            name: 'PaperPal Premium',
+                            description: 'Limitless PDF sessions for seamless document management'
                         },
-                        unit_amount: 2000,
+                        unit_amount: 999,
                         recurring: {
                             interval: 'month'
                         },
