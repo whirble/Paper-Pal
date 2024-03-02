@@ -46,7 +46,7 @@ export default async function Home() {
       'bg-black' : !isAuth,
     })}>
 
-      <div className='absolute top-0 left-0 w-full h-auto border-b border-solid border-transparent p-4 flex items-center justify-end gap-5'>
+      <div className={`absolute top-0 left-0 w-full h-auto border-b border-solid ${isAuth ? 'border-slate-300' : 'border-transparent'} p-4 flex items-center justify-end gap-5`}>
         <div className='flex items-center gap-2'>
           {isAuth 
           ? (<>

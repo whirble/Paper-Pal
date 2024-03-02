@@ -23,12 +23,15 @@ const SubscriptionBtn = (props: Props) => {
     };
     return (
         <Button disabled={Loading} onClick={handleSubscription} 
-        className={ cn('', {
-            'bg-white text-dark hover:underline hover:bg-white' : props.isPro, // Subscribed
-            'bg-white text-dark hover:bg-white' : !props.isPro, // Free Plan
+        className={ cn('bg-white text-dark hover:underline hover:bg-white', {
+            // 'bg-white text-dark hover:underline hover:bg-white' : props.isPro, // Subscribed
+            // 'bg-white text-dark hover:bg-white' : !props.isPro, // Free Plan
         })}>
             {Loading ? (
+                <>
+                <p>{props.isPro ? 'Manage Subscriptions' : 'Upgrade to premium'}</p>
                 <Loader2 className='w-4 h-4 animate-spin'/>
+                </>
             ): (
                 props.isPro ? 'Manage Subscriptions' : 'Upgrade to premium'
             )}
