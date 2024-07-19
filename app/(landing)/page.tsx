@@ -94,7 +94,7 @@ export default async function Home() {
           <div className='w-3/5 mt-4'>
             {isAuth 
             ? 
-            (<FileUpload />) 
+            (<FileUpload userId={userId} />) 
             : 
             ( <Link href='/sign-in'><Button className='bg-white text-dark hover:bg-white hover:underline'>Login to get started <LogIn className='w-5 h-5 ml-2' /></Button></Link>)}
           </div>
