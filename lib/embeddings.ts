@@ -13,10 +13,10 @@ export async function getEmbeddings(text:String) {
             input: text.replace(/\n/g, ' ')
         });
         const result = await Response.json()
-        // console.log('embeddings:',result)
+        console.log('embeddings:',result)
         return result.data[0].embedding as number[]
     } catch (error) {
-        console.log('getEmbeddings error', error)
+        console.log('Error creating embeddings!', error)
         throw error
     }
 }

@@ -16,7 +16,7 @@ import { auth } from '@clerk/nextjs'
 type Props = {
     userId: string
 }
-
+console.log('started fileUpload.tsx')
 const FileUpload = ( {userId}:Props ) => {
     const router = useRouter()
     // const {userId} = auth() only in server component.
@@ -42,7 +42,7 @@ const FileUpload = ( {userId}:Props ) => {
         accept: { 'application/pdf': ['.pdf']},
         maxFiles: 1,
         onDrop: async (acceptedFiles) => {
-            // console.log(acceptedFiles);
+            console.log('acceptedFiles: ',acceptedFiles);
             const file = acceptedFiles[0];
             if (file.size > 10 * 1024 * 1024) {
                 // file size > 10 mb
@@ -52,26 +52,27 @@ const FileUpload = ( {userId}:Props ) => {
             // file size < 10 mb
             try {
                 // Limit chats creation in test mode
-                const _chats = await db.select().from(chats).where(eq(chats.userId, userId || ''))
-                if(_chats.length > 2) {
-                    toast.error("This app is on test mode!, You've reached the chats limit ")
-                    return
-                }
+                // const _chats = await db.select().from(chats).where(eq(chats.userId, userId || ''))
+                // if(_chats.length > 2) {
+                //     toast.error("This app is on test mode!, You've reached the chats limit ")
+                //     return
+                // }
                 // // ------------------------
                 setUploading(true)
+                console.log('started uploadToS3')
                 const data = await uploadToS3(file)
                 if(!data?.file_key || !data.file_name){
                     toast.error('Something went wrong!, pls try again.');
                     return;
                 }
-                
+                console.log('started mutate')
                 mutate(data, {
                     onSuccess: (chat_id) => {
                         toast.success(`chat created :), you're being redirected.`);
                         router.push(`/chat/${chat_id}`)
                     },
                     onError: (err) => {
-                        toast.error("Couldn't create your chats, pls try again.");
+                        toast.error("Something went wrong, please try again later.");
                         console.log(err)
                     }
                 })

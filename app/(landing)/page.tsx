@@ -45,8 +45,11 @@ export default async function Home() {
       '' : isAuth,
       'bg-black' : !isAuth,
     })}>
-
-      <div className={`absolute top-0 left-0 w-full h-auto border-b border-solid ${isAuth ? 'border-slate-300' : 'border-transparent'} p-4 flex items-center justify-end gap-5`}>
+      {/* nav bar */}
+      <div className={`absolute top-0 left-0 w-full h-auto border-b border-solid ${isAuth ? 'border-slate-300' : 'border-transparent'} px-10 py-5 flex items-center justify-between gap-5`}>
+        <div className={`relative text-4xl tracking-normal font-normale ${isAuth ? 'text-[#00467F]' : 'text-white'}`}>
+          <a href="/">PaperPal</a>
+        </div>
         <div className='flex items-center gap-2'>
           {isAuth 
           ? (<>
@@ -59,7 +62,7 @@ export default async function Home() {
           </>)}
         </div>
       </div>  
-
+      {/* hero section */}
       <div className={cn('absolute ', {
         'left-1/2 top-1/2 -translate-x-1/2 w-3/4 -translate-y-1/2': isAuth,
         'left-0 top-1/4 w-full': !isAuth
@@ -71,14 +74,14 @@ export default async function Home() {
         })}>
 
           <div className={`flex items-center ${!isAuth ? 'w-1/2 text-slate-300': 'w-full justify-center'}`}>
-            <h1 className='text-6xl font-light py-5'>
+            <h1 className='text-6xl p-auto'>
               {isAuth 
-              ? <>Get Instant PDF Insights</>
-              : <>Instant PDF Insights: <TypeEffect cursor={true} delay={500} string={['AI Chat Bot for Swift Document Analysis.']}/></> 
+              ? <h1 className='font-semibold bg-gradient-to-r from-[#00467F] to-[#A5CC82] bg-clip-text text-transparent'>Get Instant PDF Insights</h1>
+              : <h1 className='font-light'>Instant PDF Insights: <TypeEffect cursor={true} delay={500} string={['AI Chat Bot for Swift Document Analysis.']}/></h1> 
               }
             </h1>
           </div>
-
+          {/* go to chats button */}
           <div className='flex mt-2'>
             {isAuth && FirstChat && 
               <Link href={`/chat/${FirstChat.id}`}>
@@ -87,8 +90,8 @@ export default async function Home() {
             }
           </div>
 
-          <p className='max-w-xl my-1 font-light text-gray-400 text-base'>
-            Join millions of students, researchers and professionals to instantly answer questions and inderstand research with AI.
+          <p className={`max-w-xl my-2 font-light ${isAuth ? 'text-gray-700' : 'text-gray-300'}  text-medium`}>
+            "Join millions of students, researchers, and professionals in using AI to quickly answer questions and enhance research understanding."
           </p>
           
           <div className='w-3/5 mt-4'>
@@ -109,18 +112,6 @@ export default async function Home() {
               <p className=''>Don&apos;t just read, revolutionize your document interactions with the revolutionary GPT-3.5 language model. Instead of sifting through pages, simply ask: &quot;Summarize this report&quot; or &quot;Extract key information.&quot; Need inspiration? Generate creative content based on your documents, brainstorm ideas, or even collaborate on tasks directly within the PDF. Unleash the full potential of your PDFs with GPT-3.5 - your intelligent document assistant is here.</p>
             </div>
   
-            <div className='flex flex-col items-start justify-start font-light'>
-              <div className='flex flex-col p-4 gap-4 w-full h-fit border border-gray-800 border-b-0 text-base text-gray-400 leading-tight'>
-              <p className=''>Input</p>
-              <p className=''>Présentez-vous et parler de vos fonctions, caractéristiques et les tâches pour lesquelles vous êtes conçu.</p>
-              </div>
-              <div className='flex flex-col p-4 gap-3 w-full h-auto border border-gray-800 text-base text-white leading-tight'>
-              <p className=''>Output</p>
-              <p className=''><TypeEffect delay={1000} cursor={false} string={['Je suis le modèle linguistique GPT-3.5, révolutionnant l`engagement avec les documents. Je suis conçu pour résumer les rapports, extraire des informations clés et générer du contenu créatif. Je suis votre assistant documentaire intelligent, simplifiant la gestion de l`information.']} /></p>
-              </div>
-            </div>
-          
-
           </div>
           </>)
           }
@@ -128,8 +119,10 @@ export default async function Home() {
         </div>
         
       </div>
-
-      
+      {/* copyright */}
+      <div className='absolute bottom-0 left-0 w-full p-2 items-center justify-start text-xs text-gray-400 font-light'>
+        Made for pleasure by <span className='text-pink-800'>Elkortobi khalil</span>, &copy; 2024
+      </div>
 
     </div>
   )

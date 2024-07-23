@@ -22,7 +22,7 @@
     "axios": "^1.6.3",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
-    "dotenv": "^16.3.1",
+    "dotenv": "^16.4.5",
     "drizzle-kit": "^0.20.13",
     "drizzle-orm": "^0.29.2",
     "langchain": "^0.1.5",
